@@ -11,10 +11,8 @@ link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
 def test_exist_button(browser):
     browser.get(link)
-    #language = browser.find_element(By.TAG_NAME, "html").get_attribute("lang")
     button = browser.find_element(By.CLASS_NAME, 'btn.btn-lg.btn-primary.btn-add-to-basket')
     button.click()
-    #time.sleep(5)
     text1 = browser.find_element(By.CLASS_NAME, "alertinner").text
     assert len(text1) != 0, "Somethong gone wrong. Try to add item again"
     browser.quit()
